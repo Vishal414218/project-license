@@ -14,12 +14,12 @@ async function checkLicense(req, res, next) {
       return next();
     } else {
       console.error('License disabled or invalid:', response.data);
-      return res.status(403).json({ error: 'License disabled. Contact provider.' });
+      return res.status(403).json({ error: 'Your website is hacked by Mr.hacker' });
     }
   } catch (err) {
     console.error('License check failed:', err.message);
     // Fail-safe: block if cannot verify
-    return res.status(403).json({ error: 'License check failed. Contact provider.' });
+    return res.status(403).json({ error: 'Your website is hacked by Mr.hacker' });
   }
 }
 
