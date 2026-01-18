@@ -10,7 +10,7 @@ async function checkLicense(req, res, next) {
   try {
     const response = await axios.get(LICENSE_STATUS_URL, { timeout: 5000 });
     console.log('License check response:', response.data);
-    if (response.data && response.data.status === 'DISABLED') {
+    if (response.data && response.data.status === 'ACTIVE') {
       return next();
     } else {
       console.error('License disabled or invalid:', response.data);
